@@ -1,7 +1,7 @@
 ﻿using Codebase.Core.UI.Popups;
 using Codebase.Infrastructure.Services.AssetManagement;
 
-namespace Codebase.Infrastructure.Services.Factories
+namespace Codebase.Infrastructure.Services.Builders
 {
     public class CanvasBuilderWithoutShop : CanvasBuilderBase
     {

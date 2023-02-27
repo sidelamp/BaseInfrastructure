@@ -1,7 +1,7 @@
 ﻿using Codebase.Infrastructure.Services.AssetManagement;
 using UnityEngine;
 
-namespace Codebase.Infrastructure.Services.Factories
+namespace Codebase.Infrastructure.Services.Builders
 {
     public abstract class CanvasBuilderBase
     {
