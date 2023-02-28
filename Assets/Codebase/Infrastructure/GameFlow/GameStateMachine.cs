@@ -3,6 +3,7 @@ using Codebase.Infrastructure.GameFlow.States;
 using Codebase.Infrastructure.Services;
 using Codebase.Infrastructure.Services.DataStorage;
 using Codebase.Infrastructure.Services.Factories;
+using Codebase.Infrastructure.Services.Pool;
 using Codebase.Infrastructure.StateMachine;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace Codebase.Infrastructure.GameFlow
                     services.Single<ITemporaryLevelVariables>(), loadingCurtain),
 
                 [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, loadingCurtain,
-                    services.Single<ILevelFactory>(), services.Single<IGameVariables>()),
+                    services.Single<ILevelFactory>(), services.Single<IGameVariables>(), services.Single<PoolService>()),
 
                 [typeof(GameplayState)] = new GameplayState(this, services.Single<CanvasService>(),
                     services.Single<ITemporaryLevelVariables>()),
