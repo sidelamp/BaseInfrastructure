@@ -5,6 +5,7 @@ using Codebase.Infrastructure.Services.AssetManagement;
 using Codebase.Infrastructure.Services.Builders;
 using Codebase.Infrastructure.Services.DataStorage;
 using Codebase.Infrastructure.Services.Factories;
+using Codebase.Infrastructure.Services.Levels;
 using Codebase.Infrastructure.Services.Pool;
 using Codebase.Infrastructure.Services.SaveLoad;
 using Codebase.Infrastructure.Services.Settings;
@@ -58,6 +59,7 @@ namespace Codebase.Infrastructure.GameFlow.States
 
             RegisterLevelFactory();
             RegisterPoolService();
+            RegisterLevelService();
         }
 
         private void RegisterGameSettings()
@@ -123,6 +125,10 @@ namespace Codebase.Infrastructure.GameFlow.States
             _services.RegisterSingle(new PoolService());
         }
 
+        private void RegisterLevelService()
+        {
+            _services.RegisterSingle<ILevelService>(new LevelService());
+        }
 
         private void RegisterCanvasService()
         {
