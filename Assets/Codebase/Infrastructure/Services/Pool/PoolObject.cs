@@ -1,8 +1,8 @@
-﻿using Assets. Core.Pool;
-using  Infrastructure.Services.AssetManagement;
+﻿using Assets.Core.Pool;
+using Infrastructure.Services.AssetManagement;
 using UnityEngine;
 
-namespace  Infrastructure.Services.Pool
+namespace Infrastructure.Services.Pool
 {
     public class PoolObject<T> : PoolObjectBase<T> where T : ObjectOfPool
     {

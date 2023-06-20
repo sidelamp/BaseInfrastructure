@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace  Infrastructure.Services.SaveLoad
+namespace Infrastructure.Services.SaveLoad
 {
     public class PlayerPrefsService : IPlayerPrefsService
     {

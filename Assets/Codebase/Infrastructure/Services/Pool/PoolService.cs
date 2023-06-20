@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace  Infrastructure.Services.Pool
+namespace Infrastructure.Services.Pool
 {
     public class PoolService : IService
     {

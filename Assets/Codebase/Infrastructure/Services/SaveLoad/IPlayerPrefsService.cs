@@ -1,4 +1,4 @@
-﻿namespace  Infrastructure.Services.SaveLoad
+﻿namespace Infrastructure.Services.SaveLoad
 {
     public interface IPlayerPrefsService : IService
     {

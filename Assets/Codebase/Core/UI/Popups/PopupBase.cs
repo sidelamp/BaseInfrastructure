@@ -1,7 +1,7 @@
-using  Infrastructure.Services;
+using Infrastructure.Services;
 using UnityEngine;
 
-namespace  Core.UI.Popups
+namespace Core.UI.Popups
 {
     [RequireComponent(typeof(CanvasGroup))]
     public abstract class PopupBase : MonoBehaviour

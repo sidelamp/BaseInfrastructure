@@ -31,10 +31,6 @@ namespace Infrastructure.States
         {
             _loadingCurtain.Show();
 
-            Debug.Log(_startPopup);
-            Debug.Log(_canvasService);
-            Debug.Log(_canvasService.GetPopup<StartPopup>());
-
             _startPopup = _startPopup != null ?
                 _startPopup : _canvasService.GetPopup<StartPopup>();
 

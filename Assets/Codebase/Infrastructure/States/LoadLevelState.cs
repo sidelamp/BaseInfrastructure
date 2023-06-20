@@ -1,7 +1,7 @@
 ﻿using Core.UI;
 using Infrastructure.Services.Factories;
 using Infrastructure.Services.Pool;
-using Infrastructure.StateMachine; 
+using Infrastructure.StateMachine;
 
 namespace Infrastructure.States
 {

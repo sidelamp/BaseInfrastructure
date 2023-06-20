@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace  Infrastructure.Services.SaveLoad
+namespace Infrastructure.Services.SaveLoad
 {
     public class SaveLoadService : ISaveLoadService
     {

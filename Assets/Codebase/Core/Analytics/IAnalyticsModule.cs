@@ -1,6 +1,6 @@
-﻿using  Infrastructure.Services;
+﻿using Infrastructure.Services;
 
-namespace  Core.Analytics
+namespace Core.Analytics
 {
     public interface IAnalyticsModule : IService
     {

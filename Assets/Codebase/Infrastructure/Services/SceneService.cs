@@ -1,8 +1,8 @@
-using  Infrastructure.Services.AssetManagement;
-using  Infrastructure.Services.Settings;
+using Infrastructure.Services.AssetManagement;
+using Infrastructure.Services.Settings;
 using System.Linq;
 
-namespace  Infrastructure.Services
+namespace Infrastructure.Services
 {
     public class SceneService : ISceneService
     {

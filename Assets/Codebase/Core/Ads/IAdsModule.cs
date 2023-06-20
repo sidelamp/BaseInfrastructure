@@ -1,7 +1,7 @@
-﻿using  Infrastructure.Services;
+﻿using Infrastructure.Services;
 using System;
 
-namespace  Core.Ads
+namespace Core.Ads
 {
     public interface IAdsModule : IService, INetworkChecker
     {

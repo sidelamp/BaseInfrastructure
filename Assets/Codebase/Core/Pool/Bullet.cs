@@ -1,4 +1,4 @@
-using Assets. Core.Pool;
+using Assets.Core.Pool;
 
 public class Bullet : ObjectOfPool
 {

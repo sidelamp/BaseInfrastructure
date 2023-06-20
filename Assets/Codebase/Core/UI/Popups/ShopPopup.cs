@@ -1,7 +1,6 @@
-﻿namespace  Core.UI.Popups
+﻿namespace Core.UI.Popups
 {
     public class ShopPopup : PopupBase
     {
-
     }
 }

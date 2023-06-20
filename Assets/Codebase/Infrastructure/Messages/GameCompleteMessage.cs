@@ -1,4 +1,4 @@
-﻿namespace  Infrastructure.Messages
+﻿namespace Infrastructure.Messages
 {
     public enum CompleteMessage
     { Win, Lose }

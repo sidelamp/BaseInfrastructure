@@ -1,12 +1,12 @@
-﻿using  Core.UI.Popups;
-using  Infrastructure.Messages;
-using  Infrastructure.Services;
-using  Infrastructure.StateMachine;
+﻿using Core.UI.Popups;
+using Infrastructure.Messages;
+using Infrastructure.Services;
+using Infrastructure.StateMachine;
 using System.Collections;
 using UniRx;
 using UnityEngine;
 
-namespace  Infrastructure.States
+namespace Infrastructure.States
 {
     public class GameplayState : IState
     {

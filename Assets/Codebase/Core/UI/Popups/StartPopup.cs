@@ -1,8 +1,8 @@
-using  Infrastructure.Messages;
+using Infrastructure.Messages;
 using UniRx;
 using UnityEngine;
 
-namespace  Core.UI.Popups
+namespace Core.UI.Popups
 {
     public class StartPopup : PopupBase
     {

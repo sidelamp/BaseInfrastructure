@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace  Infrastructure.Services.Settings
+namespace Infrastructure.Services.Settings
 {
     public abstract class SettingsBase : ScriptableObject
     {

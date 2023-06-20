@@ -1,8 +1,8 @@
-﻿using  Infrastructure.Messages;
+﻿using Infrastructure.Messages;
 using System;
 using UniRx;
 
-namespace  Core.Analytics
+namespace Core.Analytics
 {
     public class AnalyticsModule : IAnalyticsModule
     {

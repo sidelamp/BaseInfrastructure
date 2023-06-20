@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace  Core.UI.Counters
+namespace Core.UI.Counters
 {
     public class ProgressBar : MonoBehaviour
     {

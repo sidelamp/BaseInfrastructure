@@ -1,12 +1,12 @@
-﻿using  Core.UI;
+﻿using Core.UI;
+using Core.UI.Popups;
 using Infrastructure.Services;
 using Infrastructure.StateMachine;
 using Infrastructure.States;
-using Core.UI.Popups;
 using UniRx;
 using UnityEngine;
 
-namespace  Infrasctucture.States
+namespace Infrasctucture.States
 {
     public class GameFinishState : IState
     {

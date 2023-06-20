@@ -1,10 +1,7 @@
-﻿using  Core.UI.Popups;
-using UnityEngine;
-
-namespace Core.UI.Popups
+﻿namespace Core.UI.Popups
 {
     public class GamePopup : PopupBase
     {
-        //[SerializeField] private 
+        //[SerializeField] private
     }
 }

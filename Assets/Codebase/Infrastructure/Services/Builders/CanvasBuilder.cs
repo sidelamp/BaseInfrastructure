@@ -1,6 +1,5 @@
 ﻿using Core.UI.Popups;
 using Infrastructure.Services.AssetManagement;
-using UnityEngine;
 
 namespace Infrastructure.Services.Builders
 {
@@ -34,7 +33,6 @@ namespace Infrastructure.Services.Builders
         {
             var popup = _assetProvider.Instantiate<PopupBase>($"UI/Popups/{type}Popup");
             _canvasService.Add(popup);
-            Debug.Log(type);
             return this;
         }
     }

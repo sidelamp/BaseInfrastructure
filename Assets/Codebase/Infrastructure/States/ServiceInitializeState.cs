@@ -1,15 +1,15 @@
-﻿using  Core.Ads;
-using  Core.Analytics;
-using  Infrastructure.Services;
-using  Infrastructure.Services.AssetManagement;
-using  Infrastructure.Services.Factories;
-using  Infrastructure.Services.Levels;
-using  Infrastructure.Services.Pool;
-using  Infrastructure.Services.SaveLoad;
-using  Infrastructure.Services.Settings;
-using  Infrastructure.StateMachine;
+﻿using Core.Ads;
+using Core.Analytics;
+using Infrastructure.Services;
+using Infrastructure.Services.AssetManagement;
+using Infrastructure.Services.Factories;
+using Infrastructure.Services.Levels;
+using Infrastructure.Services.Pool;
+using Infrastructure.Services.SaveLoad;
+using Infrastructure.Services.Settings;
+using Infrastructure.StateMachine;
 
-namespace  Infrastructure.States
+namespace Infrastructure.States
 {
     public class ServiceInitializeState : IState
     {

@@ -1,11 +1,11 @@
-﻿using  Infrastructure.Services;
-using  Infrastructure.Services.AssetManagement;
-using  Infrastructure.Services.Builders;
-using  Infrastructure.StateMachine;
+﻿using Infrastructure.Services;
+using Infrastructure.Services.AssetManagement;
+using Infrastructure.Services.Builders;
+using Infrastructure.StateMachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace  Infrastructure.States
+namespace Infrastructure.States
 {
     public class GameSettingsInitializeState : IState
     {
