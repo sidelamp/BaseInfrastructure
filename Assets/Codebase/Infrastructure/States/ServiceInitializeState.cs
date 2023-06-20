@@ -8,6 +8,7 @@ using Infrastructure.Services.Pool;
 using Infrastructure.Services.SaveLoad;
 using Infrastructure.Services.Settings;
 using Infrastructure.StateMachine;
+using UnityEngine;
 
 namespace Infrastructure.States
 {
@@ -26,6 +27,7 @@ namespace Infrastructure.States
 
         public void Enter()
         {
+            Debug.Log("<color=yellow>services initialize</color>");
             _stateMachine.Enter<GameSettingsInitializeState>();
         }
 

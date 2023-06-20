@@ -29,6 +29,7 @@ namespace Infrastructure.States
 
         public void Enter()
         {
+            Debug.Log("<color=yellow>Game ready state</color>");
             _loadingCurtain.Show();
 
             _startPopup = _startPopup != null ?
