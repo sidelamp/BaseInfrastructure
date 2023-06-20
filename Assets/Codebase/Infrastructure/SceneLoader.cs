@@ -1,11 +1,11 @@
-﻿using Codebase.Core.UI.Counters;
+﻿using  Core.UI.Counters;
 using System;
 using System.Collections;
 using UniRx;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Codebase.Infrastructure
+namespace  Infrastructure
 {
     public class SceneLoader
     {

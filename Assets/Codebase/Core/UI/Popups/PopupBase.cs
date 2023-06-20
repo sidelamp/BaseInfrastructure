@@ -1,32 +1,26 @@
-using UniRx;
+using  Infrastructure.Services;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace Codebase.Core.UI.Popups
+namespace  Core.UI.Popups
 {
+    [RequireComponent(typeof(CanvasGroup))]
     public abstract class PopupBase : MonoBehaviour
     {
-        [Header("Open/Close Settings")]
-        [SerializeField] private GameObject _body;
-
         [SerializeField] private bool _isOpen;
+        private BasePopupAnimation _popupAnimation;
+        private CanvasGroup _canvasGroup;
+        protected ICanvasService _canvasService;
 
-        [SerializeField] private BasePopupAnimation[] _popupAnimations;
-        [SerializeField] private Button _closePopupButton;
-
-        public bool IsOpen => _isOpen;
-
-        private void Awake()
+        public void Initialize()
         {
-            _body.SetActive(_isOpen);
+            _canvasGroup = GetComponent<CanvasGroup>();
+            _popupAnimation = GetComponent<BasePopupAnimation>();
+            _canvasService = AllServices.Container.Get<ICanvasService>();
 
-            _closePopupButton?
-                .OnClickAsObservable()
-                .Subscribe(_ => OnClosePopupButtonClick())
-                .AddTo(this);
-
-            if (_popupAnimations.Length == 0)
-                Debug.LogWarning("Animation list is empty!");
+            if (!_isOpen)
+                _canvasGroup.alpha = 0;
+            else
+                SetActive(true);
 
             OnInitialization();
         }
@@ -35,11 +29,9 @@ namespace Codebase.Core.UI.Popups
         {
             if (_isOpen) return;
 
-            _isOpen = true;
-            gameObject.SetActive(true);
+            SetActive(true);
 
-            if (!gameObject.activeInHierarchy)
-                return;
+            if (!gameObject.activeInHierarchy) return;
 
             OnOpenPopup();
             PlayAnimation(true);
@@ -49,10 +41,9 @@ namespace Codebase.Core.UI.Popups
         {
             if (!_isOpen) return;
 
-            _isOpen = false;
+            SetActive(false);
 
-            if (!gameObject.activeInHierarchy)
-                return;
+            if (!gameObject.activeInHierarchy) return;
 
             OnClosePopup();
             PlayAnimation(false);
@@ -76,13 +67,14 @@ namespace Codebase.Core.UI.Popups
 
         private void PlayAnimation(bool isOpen)
         {
-            for (int i = 0; i < _popupAnimations.Length; i++)
-                _popupAnimations[i].SetOpenFlag(isOpen);
+            if (_popupAnimation != null)
+                _popupAnimation.SetOpenFlag(isOpen);
         }
 
-        private void OnClosePopupButtonClick()
+        private void SetActive(bool isActive)
         {
-            ClosePopup();
+            _isOpen = isActive;
+            _canvasGroup.blocksRaycasts = isActive;
         }
     }
 }

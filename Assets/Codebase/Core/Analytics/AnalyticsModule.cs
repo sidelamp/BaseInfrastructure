@@ -1,22 +1,17 @@
-﻿using Codebase.Infrastructure.GameFlow;
-using Codebase.Infrastructure.Services.DataStorage;
+﻿using  Infrastructure.Messages;
 using System;
 using UniRx;
-using UnityEngine;
 
-namespace Codebase.Core.Analytics
+namespace  Core.Analytics
 {
     public class AnalyticsModule : IAnalyticsModule
     {
-        private readonly IGameVariables _gameVariables;
         private DateTime _startTime;
         private DateTime _finishTime;
         private const string ModuleTag = "[AnalyticsModule]: ";
 
-        public AnalyticsModule(IGameVariables gameVariables)
+        public AnalyticsModule()
         {
-            _gameVariables = gameVariables;
-
             MessageBroker.Default
                 .Receive<GameStatusMessage>()
                 .Where(msg => msg.Message == LevelStatusMessage.Started)
@@ -36,7 +31,7 @@ namespace Codebase.Core.Analytics
         private void LevelStart()
         {
             _startTime = DateTime.Now;
-            Debug.Log($"{ModuleTag}Level_{_gameVariables.LevelNumber} started");
+            //Debug.Log($"{ModuleTag}Level_{_gameVariables.LevelNumber} started");
         }
 
         private void LevelFinish(bool isWin)
@@ -44,7 +39,7 @@ namespace Codebase.Core.Analytics
             _finishTime = DateTime.Now;
             float resultTime = (float)_startTime.Subtract(_finishTime).TotalSeconds;
             string status = (isWin) ? "Complete" : "Fail";
-            Debug.Log($"{ModuleTag}Level_{_gameVariables.LevelNumber} finished with status: {status}, time: {Mathf.RoundToInt(resultTime)}");
+            //Debug.Log($"{ModuleTag}Level_{_gameVariables.LevelNumber} finished with status: {status}, time: {Mathf.RoundToInt(resultTime)}");
         }
     }
 }

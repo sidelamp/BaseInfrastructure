@@ -1,4 +1,4 @@
-﻿namespace Codebase.Infrastructure.Services
+﻿namespace  Infrastructure.Services
 {
     public class AllServices
     {
@@ -21,7 +21,7 @@
             Implementation<TService>.ServiceInstance = implementation;
         }
 
-        public TService Single<TService>() where TService : IService
+        public TService Get<TService>() where TService : IService
         {
             return Implementation<TService>.ServiceInstance;
         }

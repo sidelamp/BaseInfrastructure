@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Codebase.Core.Ads
+namespace  Core.Ads
 {
     public class AdsModule : IAdsModule
     {

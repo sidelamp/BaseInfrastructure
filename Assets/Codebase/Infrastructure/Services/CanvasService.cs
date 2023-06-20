@@ -1,33 +1,57 @@
-using Codebase.Core.UI.Popups;
+using Core.UI.Popups;
+using Infrastructure.Services.AssetManagement;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Codebase.Infrastructure.Services
+namespace Infrastructure.Services
 {
-    public class CanvasService : IService
+    public class CanvasService : ICanvasService
     {
-        private readonly Canvas _canvas;
+        private Transform _canvasTransform;
         private readonly List<PopupBase> _popups = new();
+        private readonly IAssetProvider _assetProvider;
 
-        public CanvasService(Canvas canvas)
+        public CanvasService(IAssetProvider assetProvider)
         {
-            _canvas = canvas;
+            _assetProvider = assetProvider;
+            CreateCanvas();
+        }
+
+        public void InitializePopups()
+        {
+            foreach (var popup in _popups)
+                popup.Initialize();
         }
 
         public void Add(PopupBase popup)
         {
             _popups.Add(popup);
 
-            popup.transform.SetParent(_canvas.transform);
+            popup.transform.SetParent(_canvasTransform, false);
             popup.GetComponent<Canvas>().overrideSorting = true;
-            
+
             SetStretch(popup);
+        }
+
+        public void Remove(PopupBase popup)
+        {
+            _popups.Remove(popup);
+            Object.Destroy(popup.gameObject);
         }
 
         public T GetPopup<T>() where T : PopupBase =>
             _popups.FirstOrDefault(p => p is T) as T;
-            
+
+        private void CreateCanvas()
+        {
+            var obj = _assetProvider.GetObject<Canvas>(AssetPath.Canvas);
+            var canvas = Object.Instantiate(obj);
+            _canvasTransform = canvas.transform;
+
+            Object.DontDestroyOnLoad(canvas.gameObject);
+        }
+
         private void SetStretch(PopupBase popup)
         {
             var rectTransform = popup.GetComponent<RectTransform>();

@@ -1,4 +1,4 @@
-﻿namespace Codebase.Core.Ads
+﻿namespace  Core.Ads
 {
     public interface INetworkChecker
     {

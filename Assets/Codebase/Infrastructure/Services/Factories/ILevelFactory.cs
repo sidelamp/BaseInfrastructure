@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Codebase.Infrastructure.Services.Factories
+namespace  Infrastructure.Services.Factories
 {
     public interface ILevelFactory : IService
     {

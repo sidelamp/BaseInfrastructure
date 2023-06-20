@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Codebase.Core.UI
+namespace  Core.UI
 {
     [ExecuteInEditMode]
     [RequireComponent(typeof(Animation))]

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Codebase.Core.Level
+namespace  Core.Level
 {
     public class Level : MonoBehaviour
     {

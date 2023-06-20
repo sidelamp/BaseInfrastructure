@@ -1,9 +1,9 @@
-using Codebase.Infrastructure.Services;
-using Codebase.Infrastructure.Services.AssetManagement;
-using Codebase.Infrastructure.Services.Pool;
+using  Infrastructure.Services;
+using  Infrastructure.Services.AssetManagement;
+using  Infrastructure.Services.Pool;
 using UnityEngine;
 
-namespace Codebase.Core.Pool
+namespace  Core.Pool
 {
     public class BulletPool : MonoBehaviour
     {
@@ -19,9 +19,9 @@ namespace Codebase.Core.Pool
         private void RegisterPool()
         {
             var services = AllServices.Container;
-            _poolService = services.Single<PoolService>();
+            _poolService = services.Get<PoolService>();
 
-            var pool = new PoolObject<Bullet>(services.Single<IAssetProvider>(), prefab);
+            var pool = new PoolObject<Bullet>(services.Get<IAssetProvider>(), prefab);
             _poolService.SetPool(pool);
         }
 

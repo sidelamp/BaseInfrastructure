@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Codebase.Utils
+namespace  Utils
 {
     public static class AbbrevationUtility
     {

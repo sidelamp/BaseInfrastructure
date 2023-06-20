@@ -1,58 +1,31 @@
-using Codebase.Infrastructure.Services.AssetManagement;
-using Codebase.Infrastructure.Services.SaveLoad;
-using Codebase.Infrastructure.Services.Settings;
+using  Infrastructure.Services.AssetManagement;
+using  Infrastructure.Services.Settings;
+using System.Linq;
 
-namespace Codebase.Infrastructure.Services
+namespace  Infrastructure.Services
 {
-    public class SceneService : ISceneService, ISaveLoad
+    public class SceneService : ISceneService
     {
         private readonly SceneSettings[] _sceneSettings;
-        private int _sceneIndex;
+        private int _activeSceneId = 1;
 
-        public SceneService(IAssetProvider assetProvider, ISaveLoadService saveLoadService, string path)
+        public SceneSettings[] Scenes => _sceneSettings;
+
+        public SceneService(IAssetProvider assetProvider)
         {
-            _sceneSettings = assetProvider.GetAllScriptableObjects<SceneSettings>(path);
-            saveLoadService.Register(this);
-            Load();
+            _sceneSettings = assetProvider.GetScriptableObjects<SceneSettings>(AssetPath.Scene);
         }
 
-        public SceneSettings GetCurrentSceneSettings()
+        public void SelectScene(int id)
         {
-            var count = _sceneSettings.Length;
-            for (int i = 0; i < count; i++)
-            {
-                var settings = _sceneSettings[i];
-                if (!settings.IsSelected)
-                    continue;
-
-                _sceneIndex = i;
-                return settings;
-            }
-
-            _sceneIndex = 0;
-            return _sceneSettings[_sceneIndex];
+            if (_activeSceneId != id)
+                _activeSceneId = id;
         }
 
-        public void SetNextScene()
-        {
-            _sceneSettings[_sceneIndex].IsSelected = false;
+        public SceneSettings GetSelectedSceneSettings() =>
+            GetSceneSettings(_activeSceneId);
 
-            _sceneIndex++;
-            _sceneIndex = _sceneIndex >= _sceneSettings.Length ? 0 : _sceneIndex;
-
-            _sceneSettings[_sceneIndex].IsSelected = true;
-        }
-
-        public void Load()
-        {
-            foreach (var item in _sceneSettings)
-                item.Load();
-        }
-
-        public void Save()
-        {
-            foreach (var item in _sceneSettings)
-                item.Save();
-        }
+        public SceneSettings GetSceneSettings(int id) =>
+            _sceneSettings.First(s => s.Id == id);
     }
 }

@@ -1,11 +1,13 @@
-﻿using Codebase.Infrastructure.Services.Settings;
+﻿using  Infrastructure.Services.Settings;
 
-namespace Codebase.Infrastructure.Services
+namespace  Infrastructure.Services
 {
     public interface ISceneService : IService
     {
-        SceneSettings GetCurrentSceneSettings();
+        SceneSettings[] Scenes { get; }
 
-        void SetNextScene();
+        SceneSettings GetSceneSettings(int id);
+        SceneSettings GetSelectedSceneSettings();
+        void SelectScene(int id);
     }
 }

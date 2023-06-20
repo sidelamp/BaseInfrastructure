@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Codebase.Infrastructure.Services.AssetManagement
+namespace  Infrastructure.Services.AssetManagement
 {
     public class AssetProvider : IAssetProvider
     {
@@ -85,7 +85,7 @@ namespace Codebase.Infrastructure.Services.AssetManagement
             return Resources.Load<T>(path);
         }
 
-        public T[] GetAllScriptableObjects<T>(string path) where T : ScriptableObject
+        public T[] GetScriptableObjects<T>(string path) where T : ScriptableObject
         {
             return Resources.LoadAll<T>(path);
         }

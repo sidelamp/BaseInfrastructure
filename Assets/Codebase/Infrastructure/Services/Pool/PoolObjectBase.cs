@@ -1,8 +1,8 @@
-﻿using Assets.Codebase.Core.Pool;
-using Codebase.Infrastructure.Services.AssetManagement;
+﻿using Assets. Core.Pool;
+using  Infrastructure.Services.AssetManagement;
 using UnityEngine.Pool;
 
-namespace Codebase.Infrastructure.Services.Pool
+namespace  Infrastructure.Services.Pool
 {
     public abstract class PoolBase
     {

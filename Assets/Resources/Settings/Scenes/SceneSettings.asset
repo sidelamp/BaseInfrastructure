@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SceneSettings
   m_EditorClassIdentifier: 
   _id: 0
-  _scene: MainScene
-  _isSelected: 0
-  _isSelectedDefault: 1
+  _name: MainScene
+  _icon: {fileID: 0}
+  _isLevel: 0

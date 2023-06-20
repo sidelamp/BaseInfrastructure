@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Infrastructure.States;
+using System;
 using System.Collections.Generic;
 
-namespace Codebase.Infrastructure.StateMachine
+namespace Infrastructure.StateMachine
 {
     public abstract class BaseStateMachine
     {

@@ -1,6 +1,6 @@
-﻿using Codebase.Infrastructure.Services;
+﻿using  Infrastructure.Services;
 
-namespace Codebase.Core.Analytics
+namespace  Core.Analytics
 {
     public interface IAnalyticsModule : IService
     {

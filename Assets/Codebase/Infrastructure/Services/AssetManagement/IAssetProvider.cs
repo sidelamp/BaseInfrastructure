@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Codebase.Infrastructure.Services.AssetManagement
+namespace  Infrastructure.Services.AssetManagement
 {
     public interface IAssetProvider : IService
     {
@@ -34,7 +34,7 @@ namespace Codebase.Infrastructure.Services.AssetManagement
 
         T GetScriptableObject<T>(string path) where T : ScriptableObject;
 
-        T[] GetAllScriptableObjects<T>(string path) where T : ScriptableObject;
+        T[] GetScriptableObjects<T>(string path) where T : ScriptableObject;
 
         int GetAssetAmount(string path);
     }

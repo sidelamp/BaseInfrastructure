@@ -1,21 +1,21 @@
-using Codebase.Core.UI;
-using Codebase.Infrastructure.GameFlow;
-using Codebase.Infrastructure.GameFlow.States;
-using Codebase.Infrastructure.Services;
+using Core.UI;
+using Infrastructure.Services;
+using Infrastructure.StateMachine;
+using Infrastructure.States;
 using UnityEngine;
 
-namespace Codebase.Infrastructure
+namespace Infrastructure
 {
     public class GameBootstrapper : MonoBehaviour
     {
         public LoadingCurtain LoadingCurtain;
-        public GameStateMachine StateMachine;
+        public BaseStateMachine StateMachine;
 
         private void Awake()
         {
             StateMachine = new GameStateMachine(new SceneLoader(), LoadingCurtain, AllServices.Container);
 
-            StateMachine.Enter<BootstrapState>();
+            StateMachine.Enter<ServiceInitializeState>();
 
             DontDestroyOnLoad(LoadingCurtain);
             DontDestroyOnLoad(this);

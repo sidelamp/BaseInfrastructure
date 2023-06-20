@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.Codebase.Core.Pool
+namespace Assets. Core.Pool
 {
     public abstract class ObjectOfPool : MonoBehaviour
     {

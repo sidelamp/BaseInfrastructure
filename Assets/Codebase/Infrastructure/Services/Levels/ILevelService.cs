@@ -1,4 +1,4 @@
-﻿namespace Codebase.Infrastructure.Services.Levels
+﻿namespace  Infrastructure.Services.Levels
 {
     public interface ILevelService : IService
     {
