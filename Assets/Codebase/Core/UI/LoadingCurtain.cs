@@ -1,19 +1,8 @@
-using UnityEngine;
+using Core.UI.Popups;
 
 namespace Core.UI
 {
-    public class LoadingCurtain : MonoBehaviour
+    public class LoadingCurtain : PopupBase
     {
-        [SerializeField] private PopupAnimation _animation;
-
-        public void Show()
-        {
-            _animation.SetOpenFlag(true);
-        }
-
-        public void Close()
-        {
-            _animation.SetOpenFlag(false);
-        }
     }
 }

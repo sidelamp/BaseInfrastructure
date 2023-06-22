@@ -26,7 +26,7 @@ namespace Infrastructure.States
         public void Enter(string sceneName)
         {
             _poolService.Clear();
-            _loadingCurtain.Show();
+            _loadingCurtain.OpenPopup();
             _sceneLoader.LoadScene(sceneName, false, OnLoaded);
         }
 

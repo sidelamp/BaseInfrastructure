@@ -30,7 +30,7 @@ namespace Infrastructure.States
         public void Enter()
         {
             Debug.Log("<color=yellow>Game ready state</color>");
-            _loadingCurtain.Show();
+            _loadingCurtain.OpenPopup();
 
             _startPopup = _startPopup != null ?
                 _startPopup : _canvasService.GetPopup<StartPopup>();
@@ -42,7 +42,7 @@ namespace Infrastructure.States
 
             Observable
                 .FromMicroCoroutine(Waiting)
-                .Subscribe(_ => _loadingCurtain.Close());
+                .Subscribe(_ => _loadingCurtain.ClosePopup());
         }
 
         private IEnumerator Waiting()

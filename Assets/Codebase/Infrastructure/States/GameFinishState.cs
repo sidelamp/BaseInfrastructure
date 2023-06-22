@@ -42,7 +42,7 @@ namespace Infrasctucture.States
         {
             _gamePopup.OpenPopup();
             _completionPopup.ClosePopup();
-            _curtain.Show();
+            _curtain.OpenPopup();
         }
     }
 }
