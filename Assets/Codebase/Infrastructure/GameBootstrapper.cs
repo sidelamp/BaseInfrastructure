@@ -8,16 +8,16 @@ namespace Infrastructure
 {
     public class GameBootstrapper : MonoBehaviour
     {
-        public LoadingCurtain LoadingCurtain;
-        public BaseStateMachine StateMachine;
+        public LoadingCurtain loadingCurtain;
+        public BaseStateMachine stateMachine;
 
         private void Awake()
         {
-            StateMachine = new GameStateMachine(new SceneLoader(), LoadingCurtain, AllServices.Container);
+            loadingCurtain.Initialize();
+            stateMachine = new GameStateMachine(new SceneLoader(), loadingCurtain, AllServices.Container);
+            stateMachine.Enter<ServiceInitializeState>();
 
-            StateMachine.Enter<ServiceInitializeState>();
-
-            DontDestroyOnLoad(LoadingCurtain);
+            DontDestroyOnLoad(loadingCurtain);
             DontDestroyOnLoad(this);
         }
     }
